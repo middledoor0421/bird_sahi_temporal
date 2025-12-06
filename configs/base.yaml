@@ -1,0 +1,48 @@
+# configs/base.yaml
+
+# Ultralytics YOLO weights (will be downloaded automatically if not present)
+model: "yolov8n.pt"
+
+# device: "0" for first GPU, "cpu" for CPU only
+device: "0"
+
+# input size for inference
+imgsz: 896
+
+# Inference source configuration
+inference:
+  # "images" or "video"
+  source_type: "video"
+
+  # When source_type == "video": glob pattern for video files
+  video_glob: "data/videos/*.mp4"
+
+  # When source_type == "images": glob pattern for images
+  image_glob: "data/images/*.jpg"
+
+  # where to save visualizations and detection json
+  save_dir: "experiments/baseline"
+
+# (Optional) dataset section for metrics later
+dataset:
+  images_dir: "data/images"
+  labels_dir: "data/labels"
+  # If non-empty, use this txt file listing image paths; otherwise, use all images in images_dir
+  list_file: ""
+
+sahi:
+  tile_size: 896
+  overlap: 0.25
+  nms_iou: 0.5
+
+temporal:
+  diff_th: 18           # frame diff threshold
+  min_area: 64          # minimum motion area in px^2 per tile
+  min_stable_frames: 2  # tile must be moving for >= 2 frames
+  max_tiles: 6          # at most 6 tiles per frame for SAHI
+
+  weak:
+    enable: true
+    conf_low: 0.20       # 아래 구간을 weak로 본다
+    conf_high: 0.60
+    small_area_ratio: 0.002  # box_area / image_area < 이 값이면 small
