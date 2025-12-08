@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASE_DIR="/home/middledoor/PycharmProjects/bird_sahi_temporal/data/visdrone_vid/raw/train/sequences"
+BASE_DIR="/home/middledoor/PycharmProjects/bird_sahi_temporal/data/visdrone_vid/raw/val/sequences"
 OUT_DIR="/home/middledoor/PycharmProjects/bird_sahi_temporal/data/visdrone_vid/videos"
 FPS=20
 

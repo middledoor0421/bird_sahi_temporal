@@ -105,7 +105,7 @@ def run_sahi_temporal_on_video(cfg: dict, det: YOLODetector) -> None:
     conf_high = float(wcfg.get("conf_high", 0.6))
     small_area_ratio = float(wcfg.get("small_area_ratio", 0.002))
 
-    save_dir = repo_root / cfg["inference"]["save_dir"] / "videos_sahi_temporal"
+    save_dir = repo_root / cfg["inference"]["save_dir"] / "base_line"
     save_dir.mkdir(parents=True, exist_ok=True)
 
     paths = sorted(glob.glob(video_glob_full))
@@ -122,8 +122,10 @@ def run_sahi_temporal_on_video(cfg: dict, det: YOLODetector) -> None:
             continue
 
         fourcc = cv2.VideoWriter_fourcc(*"mp4v")
+
+
         basename = Path(p).stem
-        out_path = save_dir / f"{basename}_sahi_temporal.mp4"
+        out_path = save_dir / f"{basename}_baseline.mp4"
 
         fps = cap.get(cv2.CAP_PROP_FPS) or 15.0
         w = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
