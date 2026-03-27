@@ -172,7 +172,7 @@ def convert_split(data_root, split, out_coco, out_seq):
                     {
                         "id": ann_id,
                         "image_id": image_id,
-                        "category_id": 1,
+                        "category_id": 14,
                         "bbox": bbox,
                         "area": float(area),
                         "iscrowd": 0,
@@ -194,9 +194,14 @@ def convert_split(data_root, split, out_coco, out_seq):
         )
 
     coco_dict = {
+        "info": {
+            "description": "FBD-SV-2024 VID (converted to COCO)",
+            "version": "1.0",
+        },
+        "licenses": [],
         "images": images,
         "annotations": annotations,
-        "categories": [{"id": 1, "name": "bird"}],
+        "categories": [{"id": 14, "name": "bird"}],
     }
 
     os.makedirs(os.path.dirname(out_coco), exist_ok=True)

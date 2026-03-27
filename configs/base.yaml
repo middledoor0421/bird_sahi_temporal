@@ -15,7 +15,7 @@ inference:
   source_type: "video"
 
   # When source_type == "video": glob pattern for video files
-  video_glob: "data/videos/*.mp4"
+  video_glob: "data/visdrone_vid/videos/*.mp4"
 
   # When source_type == "images": glob pattern for images
   image_glob: "data/images/*.jpg"
@@ -23,7 +23,7 @@ inference:
   # where to save visualizations and detection json
   save_dir: "experiments/baseline"
 
-# (Optional) dataset section for metrics later
+# (Optional) datasets section for metrics later
 dataset:
   images_dir: "data/images"
   labels_dir: "data/labels"

@@ -1,3 +1,52 @@
 /data
 yolov8n.pt
+/weights/
 /experiments
+/dynamic_det
+/output
+/data_prep
+/eval_sets
+/eval_splits
+ATECH-S-*.pdf
+
+# Local docs / paper / logs (keep local, do not push)
+/docs/
+/paper_thesis_2/
+/thesis2_memo/
+/total_logs/
+paper_folder_skeleton_guide.md
+workspace_docs_operations_template.md
+thesis_2_정리_0303.ini
+class_mapping_coco_plus1.json
+
+# Python cache / build artifacts
+__pycache__/
+*.py[cod]
+
+# Editor / local workspace files
+.idea/
+.vscode/
+
+# LaTeX / make4ht temporary files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.dvi
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.tmp
+*.toc
+*.xref
+*.4tc
+*.4ct
+*.idv
+*.lg
+*.xdv
+*.synctex.gz
+main_anonymized_htlatex.*
